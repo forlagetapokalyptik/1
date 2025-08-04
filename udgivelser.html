@@ -12,29 +12,19 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Crimson Text', 'Times New Roman', serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #fafafa;
-        }
+       }
 
         /* Header og navigation */
         header {
             background-color: #fff;
-            border-bottom: 1px solid #e0e0e0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-bottom: 1px solid #000;
+            padding: 0;
         }
 
         nav {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 1rem 2rem;
+            padding: 1rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -42,9 +32,8 @@
         }
 
         nav h1 {
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: normal;
-            letter-spacing: 1px;
         }
 
         nav h1 a {
@@ -54,116 +43,108 @@
         }
 
         nav h1 a:hover {
-            color: #666;
-            transition: color 0.3s ease;
+            color: #000;
+        }
+
+        nav h1 a:focus {
+            outline: none;
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         nav ul li a {
-            color: #333;
+            color: #000;
             text-decoration: none;
             font-size: 1rem;
             font-weight: normal;
-            transition: color 0.3s ease;
-            padding: 0.5rem 0;
-            border-bottom: 2px solid transparent;
+            padding: 0.25rem 0;
         }
 
         nav ul li a:hover {
             color: #000;
-            border-bottom-color: #000;
+        }
+
+        nav ul li a:focus {
+            outline: none;
         }
 
         nav ul li a.active {
-            color: #000;
-            border-bottom-color: #000;
+            text-decoration: underline;
         }
 
         /* Main content */
         main {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 1rem;
         }
 
         .page-title {
-            text-align: center;
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: normal;
             color: #000;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             font-style: normal;
         }
 
         /* Book grid */
         .book-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 2rem;
         }
 
         .book-item {
             background: #fff;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .book-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border: 1px solid #000;
         }
 
         .book-item img {
             width: 100%;
-            height: 400px;
+            height: 250px;
             object-fit: cover;
-            border-bottom: 1px solid #e0e0e0;
+            display: block;
         }
 
         .book-info {
-            padding: 1.5rem;
+            padding: 1rem;
         }
 
         .book-title {
-            font-size: 1.3rem;
-            font-weight: bold;
+            font-size: 1.1rem;
+            font-weight: normal;
             color: #000;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.25rem;
             font-style: normal;
         }
 
         .book-author {
             font-size: 1rem;
-            color: #666;
-            margin-bottom: 1rem;
+            color: #000;
+            margin-bottom: 0.5rem;
         }
 
         .book-description {
-            font-size: 0.95rem;
-            color: #555;
-            line-height: 1.5;
+            font-size: 0.9rem;
+            color: #000;
+            line-height: 1.4;
         }
 
         /* Footer */
         footer {
-            background-color: #333;
-            color: #fff;
+            border-top: 1px solid #000;
+            padding: 1rem 0;
+            margin-top: 2rem;
             text-align: center;
-            padding: 2rem 0;
-            margin-top: 4rem;
         }
 
         footer p {
             font-size: 0.9rem;
-            opacity: 0.8;
+            color: #000;
         }
 
         /* Responsive design */
@@ -171,7 +152,6 @@
             nav {
                 flex-direction: column;
                 gap: 1rem;
-                text-align: center;
             }
 
             nav ul {
@@ -181,17 +161,23 @@
             }
 
             .page-title {
-                font-size: 2rem;
+                font-size: 1.5rem;
             }
 
             .book-grid {
                 grid-template-columns: 1fr;
-                gap: 2rem;
+                gap: 1.5rem;
             }
+        }
 
-            main {
-                padding: 1rem;
-            }
+        /* Remove all focus outlines */
+        *:focus {
+            outline: none;
+        }
+
+        a:focus,
+        button:focus {
+            outline: none;
         }
     </style>
 </head>
@@ -212,7 +198,7 @@
         
         <div class="book-grid">
             <div class="book-item">
-                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDMwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjMDAwIi8+Cjwvc3ZnPgo=" alt="billede">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjI1MCIgdmlld0JveD0iMCAwIDIwMCAyNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjUwIiBmaWxsPSIjMDAwIi8+Cjwvc3ZnPgo=" alt="billede">
                 <div class="book-info">
                     <h4 class="book-title">titel</h4>
                     <p class="book-author">forfatter</p>
@@ -220,7 +206,7 @@
                 </div>
             </div>
             <div class="book-item">
-                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDMwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjMDAwIi8+Cjwvc3ZnPgo=" alt="billede">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjI1MCIgdmlld0JveD0iMCAwIDIwMCAyNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjUwIiBmaWxsPSIjMDAwIi8+Cjwvc3ZnPgo=" alt="billede">
                 <div class="book-info">
                     <h4 class="book-title">titel</h4>
                     <p class="book-author">forfatter</p>
@@ -228,7 +214,7 @@
                 </div>
             </div>
             <div class="book-item">
-                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDMwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjMDAwIi8+Cjwvc3ZnPgo=" alt="billede">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjI1MCIgdmlld0JveD0iMCAwIDIwMCAyNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjUwIiBmaWxsPSIjMDAwIi8+Cjwvc3ZnPgo=" alt="billede">
                 <div class="book-info">
                     <h4 class="book-title">titel</h4>
                     <p class="book-author">forfatter</p>
