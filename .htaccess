@@ -1,5 +1,9 @@
 RewriteEngine On
 
+# Fjern trailing slash fra alle URL'er
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)/$ /$1 [R=301,L]
+
 # Fjern .html fra URL'er
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
