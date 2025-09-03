@@ -13,11 +13,6 @@ css
  color: #333;
  /* Mørk grå tekst */
  background-color: #fff;
- background-image: url('dit-billede.jpg'); /* Ændr til dit billednavn */
- background-attachment: fixed;
- background-position: center bottom;
- background-repeat: no-repeat;
- background-size: cover;
  }
  /* Hvid baggrund */
  /* Header (øverste del med menu) */
@@ -143,7 +138,7 @@ gap: 2rem;
  main {
  padding: 1rem;
  }
-  * Billeder med fade overgang */
+  /* Billeder med fade overgang */
 .top-image {
     position: fixed;
     top: 0;
@@ -175,4 +170,3 @@ gap: 2rem;
     background: linear-gradient(to bottom, rgba(229,229,229,0) 0%, rgba(229,229,229,0.7) 50%, rgba(229,229,229,0) 100%);
     z-index: -1;
 }
- }
