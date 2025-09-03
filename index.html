@@ -1,272 +1,327 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apokalyptik</title>
-    <style>
-        /* Reset og basis styling */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apokalyptik</title>
+  <style>
+    /* Reset og basis styling */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap');
 
-        body {
-            font-family: 'Crimson Text', 'Times New Roman', serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #fafafa;
-        }
+    body {
+      font-family: 'Crimson Text', 'Times New Roman', serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #fafafa;
+    }
 
-        /* Header og navigation */
-        header {
-            background-color: #fff;
-            border-bottom: 1px solid #000;
-            padding: 0;
-        }
+    /* Baggrundsbilleder (crossfade) */
+    .background-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      z-index: -1;
+    }
 
-        nav {
-            max-width: 650px;
-            margin: 0 auto;
-            padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
+    .background-container .image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      transition: opacity 0.1s linear;
+    }
 
-        nav h1 {
-            font-size: 1.5rem;
-            font-weight: normal;
-        }
+    .top-image {
+      background-image: url("hjemmeside-baggrund-top1.jpg");
+      opacity: 1;
+    }
 
-        nav h1 a {
-            color: #000;
-            text-decoration: none;
-            font-style: normal;
-        }
+    .bottom-image {
+      background-image: url("hjemmeside-baggrund-bund1.jpg");
+      opacity: 0;
+    }
 
-        nav h1 a:hover {
-            color: #000;
-        }
+    /* Header og navigation */
+    header {
+      background-color: #fff;
+      border-bottom: 1px solid #000;
+      padding: 0;
+      position: relative;
+      z-index: 1; /* sikrer at header ligger over baggrund */
+    }
 
-        nav h1 a:focus {
-            outline: none;
-}
+    nav {
+      max-width: 650px;
+      margin: 0 auto;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
 
-.logo-container {
-    display: flex;
-    flex-direction: column;
-}
+    nav h1 {
+      font-size: 1.5rem;
+      font-weight: normal;
+    }
 
-.tagline {
-    font-size: 0.9rem;
-    font-style: italic;
-    color: #000;
-    margin-top: 0.25rem;
-}
+    nav h1 a {
+      color: #000;
+      text-decoration: none;
+      font-style: normal;
+    }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 1.5rem;
-        }
+    nav h1 a:hover {
+      color: #000;
+    }
 
-        nav ul li a {
-            color: #000;
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: normal;
-            padding: 0.25rem 0;
-        }
+    nav h1 a:focus {
+      outline: none;
+    }
 
-        nav ul li a:hover {
-            color: #000;
-        }
+    .logo-container {
+      display: flex;
+      flex-direction: column;
+    }
 
-        nav ul li a:focus {
-            outline: none;
-        }
+    .tagline {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: #000;
+      margin-top: 0.25rem;
+    }
 
-        /* Main content */
-        main {
-            max-width: 650px;
-            margin: 0 auto;
-            padding: 1rem;
-        }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
 
-        /* Hero section */
-        .hero {
-            padding: 2rem 0;
-            border-bottom: 1px solid #000;
-            margin-bottom: 2rem;
-        }
+    nav ul li a {
+      color: #000;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: normal;
+      padding: 0.25rem 0;
+    }
 
-        .hero h2 {
-            font-size: 2rem;
-            font-weight: normal;
-            color: #000;
-            font-style: normal;
-        }
+    nav ul li a:hover {
+      color: #000;
+    }
 
-        /* Featured books section */
-        .featured-books {
-            margin-bottom: 2rem;
-        }
+    nav ul li a:focus {
+      outline: none;
+    }
 
-        .featured-books h3 {
-            font-size: 1.5rem;
-            font-weight: normal;
-            margin-bottom: 2rem;
-            color: #000;
-            font-style: normal;
-        }
+    /* Main content */
+    main {
+      max-width: 650px;
+      margin: 0 auto;
+      padding: 1rem;
+      position: relative;
+      z-index: 1; /* over baggrund */
+    }
 
-        .book-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 2rem;
-        }
+    /* Hero section */
+    .hero {
+      padding: 2rem 0;
+      border-bottom: 1px solid #000;
+      margin-bottom: 2rem;
+    }
 
-        .book-item {
-            background: #fff;
-            border: 1px solid #000;
-        }
+    .hero h2 {
+      font-size: 2rem;
+      font-weight: normal;
+      color: #000;
+      font-style: normal;
+    }
 
-        .book-item img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            display: block;
-        }
+    /* Featured books section */
+    .featured-books {
+      margin-bottom: 2rem;
+    }
 
-        .book-info {
-            padding: 1rem;
-        }
+    .featured-books h3 {
+      font-size: 1.5rem;
+      font-weight: normal;
+      margin-bottom: 2rem;
+      color: #000;
+      font-style: normal;
+    }
 
-        .book-title {
-            font-size: 1.1rem;
-            font-weight: normal;
-            color: #000;
-            margin-bottom: 0.25rem;
-            font-style: normal;
-        }
+    .book-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 2rem;
+    }
 
-        .book-author {
-            font-size: 1rem;
-            color: #000;
-            margin-bottom: 0.5rem;
-        }
+    .book-item {
+      background: #fff;
+      border: 1px solid #000;
+    }
 
-        .book-description {
-            font-size: 0.9rem;
-            color: #000;
-            line-height: 1.4;
-        }
+    .book-item img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+    }
 
-        /* Footer */
-        footer {
-            border-top: 1px solid #000;
-            padding: 1rem 0;
-            margin-top: 2rem;
-            text-align: center;
-        }
+    .book-info {
+      padding: 1rem;
+    }
 
-        footer p {
-            font-size: 0.9rem;
-            color: #000;
-        }
+    .book-title {
+      font-size: 1.1rem;
+      font-weight: normal;
+      color: #000;
+      margin-bottom: 0.25rem;
+      font-style: normal;
+    }
 
-        /* Responsive design */
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                gap: 1rem;
-            }
+    .book-author {
+      font-size: 1rem;
+      color: #000;
+      margin-bottom: 0.5rem;
+    }
 
-            nav ul {
-                gap: 1rem;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
+    .book-description {
+      font-size: 0.9rem;
+      color: #000;
+      line-height: 1.4;
+    }
 
-            .hero h2 {
-                font-size: 1.5rem;
-            }
+    /* Footer */
+    footer {
+      border-top: 1px solid #000;
+      padding: 1rem 0;
+      margin-top: 2rem;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
 
-            .book-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-        }
+    footer p {
+      font-size: 0.9rem;
+      color: #000;
+    }
 
-        /* Remove all focus outlines and hover effects */
-        *:focus {
-            outline: none;
-        }
+    /* Responsive design */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
 
-        a:focus,
-        button:focus {
-            outline: none;
-        }
-    </style>
+      nav ul {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero h2 {
+        font-size: 1.5rem;
+      }
+
+      .book-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+    }
+
+    /* Fjern outlines */
+    *:focus {
+      outline: none;
+    }
+
+    a:focus,
+    button:focus {
+      outline: none;
+    }
+  </style>
 </head>
-<div class="top-image"></div>
-<div class="bottom-image"></div>
-<div class="fade-overlay"></div>
 <body>
-    <header>
-        <nav>
-            <h1><a href=".">apokalyptik</a></h1>
-            <ul>    
-                <li><a href="udgivelser">udgivelser</a></li>
-                <li><a href="om-forlaget">om forlaget</a></li>
-                <li><a href="kontakt">kontakt</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- Baggrund -->
+  <div class="background-container">
+    <div class="image top-image"></div>
+    <div class="image bottom-image"></div>
+  </div>
 
-    <main>
-        <section class="hero">
-            <h2>forlag for fordærvelig litteratur</h2>
-        </section>
+  <header>
+    <nav>
+      <h1><a href=".">apokalyptik</a></h1>
+      <ul>    
+        <li><a href="udgivelser">udgivelser</a></li>
+        <li><a href="om-forlaget">om forlaget</a></li>
+        <li><a href="kontakt">kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
 
-        <section class="featured-books">
-            <h3>kommende udgivelser</h3>
-            <div class="book-grid">
-                <div class="book-item">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjI1MCIgdmlld0JveD0iMCAwIDIwMCAyNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjUwIiBmaWxsPSIjMDAwIi8+Cjwvc3ZnPgo=" alt="billede">
-                    <div class="book-info">
-                        <h4 class="book-title">titel</h4>
-                        <p class="book-author">forfatter</p>
-                        <p class="book-description">beskrivelse.</p>
-                    </div>
-                </div>
-                <div class="book-item">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjI1MCIgdmlld0JveD0iMCAwIDIwMCAyNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjUwIiBmaWxsPSIjMDAwIi8+Cjwvc3ZnPgo=" alt="billede">
-                    <div class="book-info">
-                        <h4 class="book-title">titel</h4>
-                        <p class="book-author">forfatter</p>
-                        <p class="book-description">beskrivelse.</p>
-                    </div>
-                </div>
-                <div class="book-item">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjI1MCIgdmlld0JveD0iMCAwIDIwMCAyNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjUwIiBmaWxsPSIjMDAwIi8+Cjwvc3ZnPgo=" alt="billede">
-                    <div class="book-info">
-                        <h4 class="book-title">titel</h4>
-                        <p class="book-author">forfatter</p>
-                        <p class="book-description">beskrivelse.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+  <main>
+    <section class="hero">
+      <h2>forlag for fordærvelig litteratur</h2>
+    </section>
 
-    <footer>
-        <p>&copy; 2025 apokalyptik.</p>
-    </footer>
+    <section class="featured-books">
+      <h3>kommende udgivelser</h3>
+      <div class="book-grid">
+        <div class="book-item">
+          <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjI1MCIgdmlld0JveD0iMCAwIDIwMCAyNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjUwIiBmaWxsPSIjMDAwIi8+Cjwvc3ZnPgo=" alt="billede">
+          <div class="book-info">
+            <h4 class="book-title">titel</h4>
+            <p class="book-author">forfatter</p>
+            <p class="book-description">beskrivelse.</p>
+          </div>
+        </div>
+        <div class="book-item">
+          <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjI1MCIgdmlld0JveD0iMCAwIDIwMCAyNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjUwIiBmaWxsPSIjMDAwIi8+Cjwvc3ZnPgo=" alt="billede">
+          <div class="book-info">
+            <h4 class="book-title">titel</h4>
+            <p class="book-author">forfatter</p>
+            <p class="book-description">beskrivelse.</p>
+          </div>
+        </div>
+        <div class="book-item">
+          <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjI1MCIgdmlld0JveD0iMCAwIDIwMCAyNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjUwIiBmaWxsPSIjMDAwIi8+Cjwvc3ZnPgo=" alt="billede">
+          <div class="book-info">
+            <h4 class="book-title">titel</h4>
+            <p class="book-author">forfatter</p>
+            <p class="book-description">beskrivelse.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 apokalyptik.</p>
+  </footer>
+
+  <!-- Scroll fade script -->
+  <script>
+    window.addEventListener("scroll", () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.body.scrollHeight - window.innerHeight;
+      const scrollFraction = scrollTop / docHeight;
+
+      const opacity = Math.min(1, Math.max(0, scrollFraction));
+
+      document.querySelector(".top-image").style.opacity = 1 - opacity;
+      document.querySelector(".bottom-image").style.opacity = opacity;
+    });
+  </script>
 </body>
 </html>
