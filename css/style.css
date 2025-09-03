@@ -150,7 +150,7 @@ gap: 2rem;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url('dit-top-billede.jpg');
+    background-image: url('hjemmeside-baggrund-top1.jpg');
     background-size: cover;
     z-index: -3;
 }
@@ -161,7 +161,7 @@ gap: 2rem;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url('dit-bund-billede.jpg');
+    background-image: url('hjemmeside-baggrund-bund1.jpg');
     background-size: cover;
     z-index: -2;
 }
