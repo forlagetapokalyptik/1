@@ -7,9 +7,15 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Baggrund -->
+    <div class="background-container">
+        <div class="image top-image"></div>
+        <div class="image bottom-image"></div>
+    </div>
+
     <header>
         <nav>
-            <h1><a href=".">apokalyptik</a></h1>
+            <h1><a href="index.html">apokalyptik</a></h1>
             <ul>    
                 <li><a href="udgivelser.html" class="active">udgivelser</a></li>
                 <li><a href="om-forlaget.html">om forlaget</a></li>
@@ -23,13 +29,33 @@
         
         <div class="book-grid">
             <div class="book-item">
-                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjI1MCIgdmlld0JveD0iMCAwIDIwMCAyNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjUwIiBmaWxsPSIjMDAwIi8+Cjwvc3ZnPgo=" alt="billede">
+                <img src="data:image/svg+xml;base64,..." alt="billede">
                 <div class="book-info">
                     <h4 class="book-title">titel</h4>
                     <p class="book-author">forfatter</p>
                     <p class="book-description">beskrivelse.</p>
                 </div>
             </div>
-            <div class="book-item">
-                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjI1MCIgdm
+            <!-- flere book-item her -->
+        </div>
+    </main>
 
+    <footer>
+        <p>&copy; 2025 apokalyptik.</p>
+    </footer>
+
+    <!-- Scroll fade script -->
+    <script>
+        window.addEventListener("scroll", () => {
+          const scrollTop = window.scrollY;
+          const docHeight = document.body.scrollHeight - window.innerHeight;
+          const scrollFraction = scrollTop / docHeight;
+
+          const opacity = Math.min(1, Math.max(0, scrollFraction));
+
+          document.querySelector(".top-image").style.opacity = 1 - opacity;
+          document.querySelector(".bottom-image").style.opacity = opacity;
+        });
+    </script>
+</body>
+</html>
