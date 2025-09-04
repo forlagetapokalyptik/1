@@ -4,177 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Om forlaget - apokalyptik</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap');
-
-        /* Reset og basis styling */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Crimson Text', 'Times New Roman', serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #fafafa;
-        }
-
-        /* Header og navigation */
-        header {
-            background-color: #fff;
-            border-bottom: 1px solid #000;
-            padding: 0;
-        }
-
-        nav {
-            max-width: 650px;
-            margin: 0 auto;
-            padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        nav h1 {
-            font-size: 1.5rem;
-            font-weight: normal;
-        }
-
-        nav h1 a {
-            color: #000;
-            text-decoration: none;
-            font-style: normal;
-        }
-
-        nav h1 a:hover {
-            color: #000;
-        }
-
-        nav h1 a:focus {
-            outline: none;
-}
-
-.logo-container {
-    display: flex;
-    flex-direction: column;
-}
-
-.tagline {
-    font-size: 0.9rem;
-    font-style: italic;
-    color: #000;
-    margin-top: 0.25rem;
-}
-        
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        nav ul li a {
-            color: #000;
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: normal;
-            padding: 0.25rem 0;
-        }
-
-        nav ul li a:hover {
-            color: #000;
-        }
-
-        nav ul li a:focus {
-            outline: none;
-        }
-
-        nav ul li a.active {
-            text-decoration: underline;
-        }
-
-        /* Main content */
-        main {
-            max-width: 650px;
-            margin: 0 auto;
-            padding: 1rem;
-        }
-
-        .page-title {
-            font-size: 2rem;
-            font-weight: normal;
-            color: #000;
-            margin-bottom: 2rem;
-            font-style: normal;
-        }
-
-        .content {
-            border: 1px solid #000;
-            padding: 2rem;
-            max-width: 800px;
-            background-color: #fff;
-        }
-
-        .content p {
-            font-size: 1.1rem;
-            color: #000;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-
-        .content p:last-child {
-            margin-bottom: 0;
-        }
-
-        /* Footer */
-        footer {
-            border-top: 1px solid #000;
-            padding: 1rem 0;
-            margin-top: 2rem;
-            text-align: center;
-        }
-
-        footer p {
-            font-size: 0.9rem;
-            color: #000;
-        }
-
-        /* Responsive design */
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            nav ul {
-                gap: 1rem;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .page-title {
-                font-size: 1.5rem;
-            }
-
-            .content {
-                padding: 1.5rem;
-            }
-        }
-
-        /* Remove all focus outlines */
-        *:focus {
-            outline: none;
-        }
-
-        a:focus,
-        button:focus {
-            outline: none;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Baggrund -->
+    <div class="background-container">
+        <div class="image top-image"></div>
+        <div class="image bottom-image"></div>
+    </div>
     <header>
         <nav>
             <h1><a href=".">apokalyptik</a></h1>
@@ -201,5 +38,18 @@
     <footer>
         <p>&copy; 2025 apokalyptik.</p>
     </footer>
+    <!-- Scroll fade script -->
+    <script>
+        window.addEventListener("scroll", () => {
+          const scrollTop = window.scrollY;
+          const docHeight = document.body.scrollHeight - window.innerHeight;
+          const scrollFraction = scrollTop / docHeight;
+
+          const opacity = Math.min(1, Math.max(0, scrollFraction));
+
+          document.querySelector(".top-image").style.opacity = 1 - opacity;
+          document.querySelector(".bottom-image").style.opacity = opacity;
+        });
+    </script>
 </body>
 </html>
