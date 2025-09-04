@@ -22,7 +22,7 @@ body {
   inset: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url('hjemmeside-baggrund-top1.jpg');
+  background-image: url('../hjemmeside-baggrund-top1.jpg');
   background-size: cover;
   background-position: top center;
   z-index: -3;
@@ -33,7 +33,7 @@ body {
   inset: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url('hjemmeside-baggrund-bund1.jpg'); /* PNG/WebP med gennemsigtighed */
+  background-image: url('../hjemmeside-baggrund-bund1.jpg'); /* PNG/WebP med gennemsigtighed */
   background-size: cover;
   background-position: bottom center;
   z-index: -2;
