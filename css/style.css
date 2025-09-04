@@ -1,175 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
 /* Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Grundlæggende styling */
+/* Grundlæggende */
 body {
-    font-family: 'Crimson Text', Georgia, serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #fff;
-    position: relative;
+  font-family: 'Crimson Text', 'Times New Roman', Georgia, serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  position: relative; /* så z-index på indhold fungerer over baggrund */
 }
 
-/* Baggrundsbilleder */
+/* Baggrundsbilleder (top bagved, bund med “huller” forrest) */
 .top-image {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-image: url('hjemmeside-baggrund-top1.jpg');
-    background-size: cover;
-    background-position: top center;
-    z-index: -3;
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('hjemmeside-baggrund-top1.jpg');
+  background-size: cover;
+  background-position: top center;
+  z-index: -3;
 }
 
 .bottom-image {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-image: url('hjemmeside-baggrund-bund1.png'); /* PNG med gennemsigtige områder */
-    background-size: cover;
-    background-position: bottom center;
-    z-index: -2;
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('hjemmeside-baggrund-bund1.png'); /* PNG/WebP med gennemsigtighed */
+  background-size: cover;
+  background-position: bottom center;
+  z-index: -2;
 }
 
-/* Header */
+/* Header & navigation */
 header {
-    background: #fff;
-    border-bottom: 1px solid #eee;
-    padding: 1rem 0;
-    position: relative;
-    z-index: 10;
+  background: #fff;
+  border-bottom: 1px solid #000;
+  padding: 0;
+  position: relative;
+  z-index: 10; /* oven på baggrunden */
 }
 
-/* Navigation */
 nav {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 nav h1 a {
-    text-decoration: none;
-    color: #333;
-    font-size: 1.5rem;
-    font-weight: normal;
+  color: #000;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: normal;
 }
 
 nav ul {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
+  list-style: none;      /* <- fjerner punkter */
+  display: flex;
+  gap: 1.5rem;
 }
 
 nav ul li a {
-    text-decoration: none;
-    color: #666;
-    transition: color 0.3s;
+  color: #000;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: normal;
+  padding: 0.25rem 0;
 }
 
-nav ul li a:hover {
-    color: #333;
-}
+nav ul li a:hover { color: #000; }
+nav ul li a.active { text-decoration: underline; }
 
-/* Main content */
+/* Main */
 main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-    position: relative;
-    z-index: 5;
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 1rem;
+  position: relative;
+  z-index: 5; /* oven på baggrunden */
 }
 
-/* Hero */
-.hero {
-    text-align: center;
-    margin: 3rem 0;
+.page-title {
+  font-size: 2rem;
+  font-weight: normal;
+  color: #000;
+  margin-bottom: 2rem;
 }
 
-.hero h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    font-weight: normal;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    color: #666;
-}
-
-/* Bog-gitter */
 .book-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2rem;
 }
 
 .book-item {
-    text-align: center;
-    background: #fff;
-    border: 1px solid #000;
+  background: #fff;
+  border: 1px solid #000;
 }
 
 .book-item img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
 }
 
-.book-info {
-    padding: 1rem;
-}
+.book-info { padding: 1rem; }
+.book-title { font-size: 1.1rem; margin-bottom: 0.25rem; }
+.book-author { font-size: 1rem; margin-bottom: 0.5rem; }
+.book-description { font-size: 0.9rem; line-height: 1.4; }
 
-.book-title {
-    font-size: 1.1rem;
-    font-weight: normal;
-    margin-bottom: 0.25rem;
-}
-
-.book-author {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-}
-
-.book-description {
-    font-size: 0.9rem;
-    line-height: 1.4;
-}
-
-/* Footer skjult */
-footer {
-    display: none;
-}
+/* Footer skjules globalt */
+footer { display: none; }
 
 /* Responsiv */
 @media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    nav ul {
-        gap: 1rem;
-    }
-    .hero h2 {
-        font-size: 2rem;
-    }
-    main {
-        padding: 1rem;
-    }
-    .book-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
+  nav { flex-direction: column; gap: 1rem; }
+  nav ul { gap: 1rem; flex-wrap: wrap; justify-content: center; }
+  .page-title { font-size: 1.5rem; }
+  .book-grid { grid-template-columns: 1fr; gap: 1.5rem; }
 }
-
