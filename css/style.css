@@ -14,9 +14,9 @@ body {
   line-height: 1.6;
   color: #333;
   background-color: #fff;
-  position: relative;     /* nødvendig for z-index styring */
-  min-height: 200vh;      /* tving siden længere, så man kan scrolle */
-  overflow-x: hidden;     /* undgår horisontal scroll */
+  position: relative;     
+  min-height: 200vh;       /* gør siden længere, så man kan scrolle */
+  overflow-x: hidden;      
   scroll-behavior: smooth;
 }
 
@@ -35,16 +35,17 @@ body {
 }
 
 .bottom-image {
-  position: fixed;        /* fast i bunden af viewporten */
+  position: fixed;        /* altid fast i bunden af viewporten */
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 300px;          /* tilpas efter billedets højde */
+  height: auto;           /* bevarer billedets proportioner */
+  max-height: 300px;      /* tilpas efter billedets højde */
   background-image: url('../billeder/hjemmeside-baggrund-bund1.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom center;
-  z-index: -2;            /* bag indhold, men over top-image hvis overlap */
+  z-index: -2;            /* ligger bag indholdet */
 }
 
 /* Header & navigation */
