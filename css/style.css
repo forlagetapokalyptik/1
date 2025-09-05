@@ -43,7 +43,7 @@ body {
 .bottom-image {
   margin-top: auto;       /* skubber div’en til bunden af wrapper */
   width: 100%;
-  height: 300px;          /* fast højde */
+  height: 1080px;          /* fast højde */
   background-image: url('../billeder/hjemmeside-baggrund-bund1.png');
   background-repeat: no-repeat;
   background-size: cover;
