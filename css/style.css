@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth; /* gør scroll glidende */
 }
 
 /* Grundlæggende */
@@ -13,8 +14,10 @@ body {
   line-height: 1.6;
   color: #333;
   background-color: #fff;
-  position: relative; /* så z-index på indhold fungerer over baggrund */
-  overflow-x: hidden; /* forhindrer horizontal scroll pga. baggrundsbilleder */
+  position: relative;
+  overflow-x: hidden;
+  min-height: 200vh; /* gør siden længere for scroll */
+  scroll-behavior: smooth; /* glidende scroll */
 }
 
 /* Baggrundsbilleder */
@@ -23,10 +26,10 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh; /* fylder hele viewporten */
+  height: 100vh;
   background-image: url('../billeder/hjemmeside-baggrund-top1.png');
   background-repeat: no-repeat;
-  background-size: cover;      /* skalerer billedet til hele området */
+  background-size: cover;
   background-position: top center;
   z-index: -3;
 }
@@ -36,10 +39,10 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 300px; /* tilpas højden til din bundgrafik */
+  height: 300px;
   background-image: url('../billeder/hjemmeside-baggrund-bund1.png');
   background-repeat: no-repeat;
-  background-size: cover;      /* fylder hele div’en */
+  background-size: cover;
   background-position: bottom center;
   z-index: -2;
 }
@@ -50,7 +53,7 @@ header {
   border-bottom: 1px solid #000;
   padding: 0;
   position: relative;
-  z-index: 10; /* oven på baggrunden */
+  z-index: 10;
 }
 
 nav {
@@ -71,7 +74,7 @@ nav h1 a {
 }
 
 nav ul {
-  list-style: none;      /* <- fjerner punkter */
+  list-style: none;
   display: flex;
   gap: 1.5rem;
 }
@@ -93,7 +96,7 @@ main {
   margin: 0 auto;
   padding: 1rem;
   position: relative;
-  z-index: 5; /* oven på baggrunden */
+  z-index: 5;
 }
 
 .page-title {
@@ -103,7 +106,7 @@ main {
   margin-bottom: 2rem;
 }
 
-/* Resten af CSS for bøger og info forbliver uændret */
+/* Bøger og info */
 .book-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
