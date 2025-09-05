@@ -8,10 +8,9 @@
 </head>
 <body>
     <!-- Baggrund -->
-    <div class="background-container">
-        <div class="image top-image"></div>
-        <div class="image bottom-image"></div>
-    </div>
+    <div class="top-image"></div>
+    <div class="bottom-image"></div>
+
     <header>
         <nav>
             <h1><a href=".">apokalyptik</a></h1>            
@@ -39,19 +38,5 @@
     <footer>
         <p>&copy; 2025 apokalyptik.</p>
     </footer>
-
-    <!-- Scroll fade script -->
-    <script>
-        window.addEventListener("scroll", () => {
-          const scrollTop = window.scrollY;
-          const docHeight = document.body.scrollHeight - window.innerHeight;
-          const scrollFraction = scrollTop / docHeight;
-
-          const opacity = Math.min(1, Math.max(0, scrollFraction));
-
-          document.querySelector(".top-image").style.opacity = 1 - opacity;
-          document.querySelector(".bottom-image").style.opacity = opacity;
-        });
-    </script>
 </body>
 </html>
