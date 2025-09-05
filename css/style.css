@@ -14,18 +14,20 @@ body {
   color: #333;
   background-color: #fff;
   position: relative; /* så z-index på indhold fungerer over baggrund */
+  overflow-x: hidden; /* forhindrer horizontal scroll pga. baggrundsbilleder */
 }
 
 /* Baggrundsbilleder */
 .top-image {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh; /* fylder hele viewporten */
   background-image: url('../billeder/hjemmeside-baggrund-top1.png');
-  background-repeat: repeat;        /* gentag tekstur */
-  background-size: auto;            /* brug billedets naturlige størrelse */
-  background-position: top left;    /* start fra øverste venstre */
+  background-repeat: no-repeat;
+  background-size: cover;      /* skalerer billedet til hele området */
+  background-position: top center;
   z-index: -3;
 }
 
@@ -37,7 +39,7 @@ body {
   height: 300px; /* tilpas højden til din bundgrafik */
   background-image: url('../billeder/hjemmeside-baggrund-bund1.png');
   background-repeat: no-repeat;
-  background-size: cover;           /* eller 'contain', alt efter look */
+  background-size: cover;      /* fylder hele div’en */
   background-position: bottom center;
   z-index: -2;
 }
@@ -101,6 +103,7 @@ main {
   margin-bottom: 2rem;
 }
 
+/* Resten af CSS for bøger og info forbliver uændret */
 .book-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -120,5 +123,4 @@ main {
 }
 
 .book-info { padding: 1rem; }
-.book-title { fo
-
+.book-title { font-weight: bold; }
