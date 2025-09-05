@@ -16,25 +16,28 @@ body {
   position: relative; /* så z-index på indhold fungerer over baggrund */
 }
 
-/* Baggrundsbilleder (top bagved, bund med “huller” forrest) */
+/* Baggrundsbilleder */
 .top-image {
   position: fixed;
   inset: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-image: url('../hjemmeside-baggrund-top1.jpg');
-  background-size: cover;
-  background-position: top center;
+  background-repeat: repeat;        /* gentag tekstur */
+  background-size: auto;            /* brug billedets naturlige størrelse */
+  background-position: top left;    /* start fra øverste venstre */
   z-index: -3;
 }
 
 .bottom-image {
   position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  background-image: url('../hjemmeside-baggrund-bund1.jpg'); /* PNG/WebP med gennemsigtighed */
-  background-size: cover;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 300px; /* tilpas højden til din bundgrafik */
+  background-image: url('../hjemmeside-baggrund-bund1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;           /* eller 'contain', alt efter look */
   background-position: bottom center;
   z-index: -2;
 }
@@ -117,17 +120,5 @@ main {
 }
 
 .book-info { padding: 1rem; }
-.book-title { font-size: 1.1rem; margin-bottom: 0.25rem; }
-.book-author { font-size: 1rem; margin-bottom: 0.5rem; }
-.book-description { font-size: 0.9rem; line-height: 1.4; }
+.book-title { fo
 
-/* Footer skjules globalt */
-footer { display: none; }
-
-/* Responsiv */
-@media (max-width: 768px) {
-  nav { flex-direction: column; gap: 1rem; }
-  nav ul { gap: 1rem; flex-wrap: wrap; justify-content: center; }
-  .page-title { font-size: 1.5rem; }
-  .book-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-}
