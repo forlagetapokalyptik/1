@@ -132,3 +132,15 @@ main {
 
 .book-info { padding: 1rem; }
 .book-title { font-weight: bold; }
+
+/* Footer */
+footer {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  color: #fff;
+  font-size: 0.9rem;
+  z-index: 5;
+  background: transparent;
+  pointer-events: none; /* gør at den ikke kan klikkes på */
+}
