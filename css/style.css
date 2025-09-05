@@ -22,7 +22,7 @@ body {
   inset: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../hjemmeside-baggrund-top1.jpg');
+  background-image: url('billeder/hjemmeside-baggrund-top1.jpg');
   background-repeat: repeat;        /* gentag tekstur */
   background-size: auto;            /* brug billedets naturlige størrelse */
   background-position: top left;    /* start fra øverste venstre */
@@ -35,7 +35,7 @@ body {
   left: 0;
   width: 100%;
   height: 300px; /* tilpas højden til din bundgrafik */
-  background-image: url('../hjemmeside-baggrund-bund1.jpg');
+  background-image: url('billeder/hjemmeside-baggrund-bund1.jpg');
   background-repeat: no-repeat;
   background-size: cover;           /* eller 'contain', alt efter look */
   background-position: bottom center;
