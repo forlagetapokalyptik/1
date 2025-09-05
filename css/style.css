@@ -5,7 +5,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scroll-behavior: smooth; /* gør scroll glidende */
+  scroll-behavior: smooth; /* glidende scroll */
 }
 
 /* Grundlæggende */
@@ -14,10 +14,10 @@ body {
   line-height: 1.6;
   color: #333;
   background-color: #fff;
-  position: relative;
-  overflow-x: hidden;
-  min-height: 200vh; /* gør siden længere for scroll */
-  scroll-behavior: smooth; /* glidende scroll */
+  position: relative;     /* nødvendig for z-index styring */
+  min-height: 200vh;      /* tving siden længere, så man kan scrolle */
+  overflow-x: hidden;     /* undgår horisontal scroll */
+  scroll-behavior: smooth;
 }
 
 /* Baggrundsbilleder */
@@ -31,20 +31,20 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
-  z-index: -3;
+  z-index: -3;            /* bag alt indhold */
 }
 
 .bottom-image {
-  position: fixed;
+  position: fixed;        /* fast i bunden af viewporten */
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 300px;
+  height: 300px;          /* tilpas efter billedets højde */
   background-image: url('../billeder/hjemmeside-baggrund-bund1.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom center;
-  z-index: -2;
+  z-index: -2;            /* bag indhold, men over top-image hvis overlap */
 }
 
 /* Header & navigation */
@@ -53,7 +53,7 @@ header {
   border-bottom: 1px solid #000;
   padding: 0;
   position: relative;
-  z-index: 10;
+  z-index: 10; /* ovenpå baggrundene */
 }
 
 nav {
@@ -96,7 +96,7 @@ main {
   margin: 0 auto;
   padding: 1rem;
   position: relative;
-  z-index: 5;
+  z-index: 5; /* ovenpå baggrundene */
 }
 
 .page-title {
