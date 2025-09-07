@@ -54,7 +54,7 @@ body {
 
 /* Header & navigation */
 header {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.8); /* semi-transparent hvid */
   border-bottom: 1px solid #000;
   padding: 0;
   position: relative;
