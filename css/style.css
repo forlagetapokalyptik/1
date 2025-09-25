@@ -133,6 +133,34 @@ main {
 .book-info { padding: 1rem; }
 .book-title { font-weight: bold; }
 
+/* Kontakt styling */
+.contact-info {
+    text-align: left;
+}
+
+.contact-item {
+    margin-bottom: 1.5rem;
+}
+
+.contact-item h4 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.contact-item p {
+    margin-bottom: 0.5rem;
+}
+
+.contact-item a {
+    color: #000;
+    text-decoration: underline;
+}
+
+.contact-item a:hover {
+    text-decoration: none;
+}
+
 /* Footer */
 footer {
   position: absolute;
