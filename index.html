@@ -13,7 +13,7 @@
 <div id="splash-screen">
   <div class="splash-content">
     <h1>Apokalyptik</h1>
-    <p></p>
+    <p>Tryk enter for at fortsætte</p>
     <button class="enter-btn" id="enterBtn">*</button>
   </div>
 </div>
@@ -50,8 +50,18 @@
     const splash = document.getElementById('splash-screen');
     const enterBtn = document.getElementById('enterBtn');
     
+    // Tjek om brugeren allerede har set splash screen
+    const hasSeenSplash = sessionStorage.getItem('hasSeenSplash');
+    
+    if (hasSeenSplash) {
+      // Skjul splash med det samme hvis allerede set
+      splash.style.display = 'none';
+    }
+    
     function hideSplash() {
       splash.classList.add('hidden');
+      // Gem at brugeren har set splash screen
+      sessionStorage.setItem('hasSeenSplash', 'true');
       setTimeout(() => {
         splash.style.display = 'none';
       }, 800);
