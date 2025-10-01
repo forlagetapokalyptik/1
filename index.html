@@ -6,7 +6,38 @@
   <title>Apokalyptik</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
+  
+<script>
+  const splash = document.getElementById('splash-screen');
+  const enterBtn = document.getElementById('enterBtn');
+  
+  function hideSplash() {
+    splash.classList.add('hidden');
+    setTimeout(() => {
+      splash.style.display = 'none';
+    }, 800);
+  }
+  
+  enterBtn.addEventListener('click', hideSplash);
+  
+  document.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter' && !splash.classList.contains('hidden')) {
+      hideSplash();
+    }
+  });
+</script>
+  
 <body>
+  
+  <!-- Splash Screen -->
+<div id="splash-screen">
+  <div class="splash-content">
+    <h1>Apokalyptik</h1>
+    <p>Tryk enter for at fortsætte</p>
+    <button class="enter-btn" id="enterBtn">*</button>
+  </div>
+</div>
+  
     <!-- Top baggrund -->
   <div class="top-image"></div>
 
