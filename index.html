@@ -21,7 +21,7 @@
 <div id="splash-screen">
   <div class="splash-content">
     <h1>Apokalyptik</h1>
-    <p>Tryk enter for at fortsætte</p>
+    <p></p>
     <button class="enter-btn" id="enterBtn">*</button>
   </div>
 </div>
@@ -64,10 +64,12 @@
     if (hasSeenSplash) {
       // Skjul splash med det samme hvis allerede set
       splash.style.display = 'none';
+      document.body.classList.add('splash-hidden'); // Tilføj denne linje!
     }
     
     function hideSplash() {
       splash.classList.add('hidden');
+      document.body.classList.add('splash-hidden'); // Tilføj denne linje!
       // Gem at brugeren har set splash screen
       sessionStorage.setItem('hasSeenSplash', 'true');
       setTimeout(() => {
