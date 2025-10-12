@@ -15,6 +15,11 @@ body {
   color: #333;
   background-color: #fff;
   overflow-x: hidden;
+  overscroll-behavior-y: none; /* forhindrer bounce/overscroll */
+}
+
+html {
+  overscroll-behavior-y: none; /* forhindrer bounce/overscroll på html også */
 }
 
 /* Wrapper til flex layout */
