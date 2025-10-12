@@ -50,9 +50,7 @@ body {
   background-size: cover;
   background-position: bottom center;
   z-index: -1;
-  position: fixed; /* fixed i stedet for relative */
-  bottom: 0; /* placeret i bunden */
-  left: 0;
+  position: relative;
 }
 
 /* Header & navigation */
