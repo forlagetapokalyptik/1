@@ -279,19 +279,21 @@ footer {
   font-style: italic;
 }
 
-.enter-btn {
-  display: inline-block;
-  padding: 12px 30px;
-  font-family: 'Crimson Text', 'Times New Roman', Georgia, serif;
-  font-size: 2rem;
-  color: #000;
-  background-color: transparent;
-  border: 2px solid #000;
-  cursor: pointer;
-  font-weight: 400;
+.splash-logo {
+  width: 220px;
+  max-width: 60vw;
+  height: auto;
+  display: block;
+  transition: opacity 0.2s ease;
 }
 
-.enter-btn:hover {
-  background-color: transparent; /* ingen farveændring */
-  color: #000; /* beholder sort tekst */
+.enter-btn {
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.enter-btn:hover .splash-logo {
+  opacity: 0.75;
 }
