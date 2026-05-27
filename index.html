@@ -6,7 +6,6 @@
   <title>Apokalyptik</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
-    /* Skjul hovedindhold indtil splash er væk */
     body:not(.splash-hidden) .page-wrapper,
     body:not(.splash-hidden) .top-image,
     body:not(.splash-hidden) .bottom-image {
@@ -16,81 +15,60 @@
 </head>
   
 <body>
-  <!-- Splash screen -->
-  <div class="splash-logo-wrapper">
-  <img src="billeder/apokalyptik-tekst.png" alt="Apokalyptik tekst" class="splash-text">
-  <button class="enter-btn" id="enterBtn">
-    <img src="billeder/apokalyptik-logo.png" alt="Apokalyptik logo" class="splash-logo">
-  </button>
-</div>
-  
-    <!-- Top baggrund -->
+
+  <!-- Splash Screen -->
+  <div id="splash-screen">
+    <div class="splash-content">
+      <h1>Apokalyptik</h1>
+      <p></p>
+      <div class="splash-logo-wrapper">
+        <img src="billeder/apokalyptik-tekst.png" alt="Apokalyptik tekst" class="splash-text">
+        <button class="enter-btn" id="enterBtn">
+          <img src="billeder/apokalyptik-logo.png" alt="Apokalyptik logo" class="splash-logo">
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Top baggrund -->
   <div class="top-image"></div>
+
   <!-- Alt indhold i wrapper -->
   <div class="page-wrapper">
-  <header>
-    <nav>
-      <h1><a href="./">apokalyptik</a></h1>
-      <ul>    
-        <li class="dropdown">
-          <a href="#" class="dropbtn">menu</a>
-          <div class="dropdown-content">
-            <a href="/udgivelser/">udgivelser</a>
-            <a href="/kommende-udgivelser/">kommende udgivelser</a>
-            <a href="/om-forlaget/">om forlaget</a>
-            <a href="/kontakt/">kontakt</a>
-          </div>
-        </li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <section class="hero">
-      <h2>forlag for fordærvelig litteratur</h2>
-    </section>
-  </main>
-  <footer>
-    <p>&copy; 2025 apokalyptik.</p>
-  </footer>
-    
-        <!-- Bund-baggrund nederst i wrapper -->
+    <header>
+      <nav>
+        <h1><a href="./">apokalyptik</a></h1>
+        <ul>    
+          <li class="dropdown">
+            <a href="#" class="dropbtn">menu</a>
+            <div class="dropdown-content">
+              <a href="/udgivelser/">udgivelser</a>
+              <a href="/kommende-udgivelser/">kommende udgivelser</a>
+              <a href="/om-forlaget/">om forlaget</a>
+              <a href="/kontakt/">kontakt</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="hero">
+        <h2>forlag for fordærvelig litteratur</h2>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2025 apokalyptik.</p>
+    </footer>
     <div class="bottom-image"></div>
   </div>
-  
-  <!-- JavaScript EFTER body elementerne -->
+
   <script>
     const splash = document.getElementById('splash-screen');
     const enterBtn = document.getElementById('enterBtn');
     
-    // Tjek om brugeren allerede har set splash screen
     const hasSeenSplash = sessionStorage.getItem('hasSeenSplash');
     
     if (hasSeenSplash) {
-      // Skjul splash med det samme hvis allerede set
       splash.style.display = 'none';
-      document.body.classList.add('splash-hidden'); // Tilføj denne linje!
+      document.body.classList.add('splash-hidden');
     }
-    
-    function hideSplash() {
-      splash.classList.add('hidden');
-      document.body.classList.add('splash-hidden'); // Tilføj denne linje!
-      // Gem at brugeren har set splash screen
-      sessionStorage.setItem('hasSeenSplash', 'true');
-      setTimeout(() => {
-        splash.style.display = 'none';
-      }, 800);
-    }
-    
-    enterBtn.addEventListener('click', hideSplash);
-    
-    document.addEventListener('keypress', function(e) {
-      if (e.key === 'Enter' && !splash.classList.contains('hidden')) {
-        hideSplash();
-      }
-    });
-  </script>
-  
-  <script src="../javascript/script.js"></script>
-  
-</body>
-</html>
