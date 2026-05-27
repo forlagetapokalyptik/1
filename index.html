@@ -19,10 +19,8 @@
   <!-- Splash Screen -->
   <div id="splash-screen">
     <div class="splash-content">
-      <h1>Apokalyptik</h1>
-      <p></p>
+      <img src="billeder/apokalyptik-tekst.png" alt="Apokalyptik tekst" class="splash-text">
       <div class="splash-logo-wrapper">
-        <img src="billeder/apokalyptik-tekst.png" alt="Apokalyptik tekst" class="splash-text">
         <button class="enter-btn" id="enterBtn">
           <img src="billeder/apokalyptik-logo.png" alt="Apokalyptik logo" class="splash-logo">
         </button>
@@ -72,3 +70,24 @@
       splash.style.display = 'none';
       document.body.classList.add('splash-hidden');
     }
+    
+    function hideSplash() {
+      splash.classList.add('hidden');
+      document.body.classList.add('splash-hidden');
+      sessionStorage.setItem('hasSeenSplash', 'true');
+      setTimeout(() => {
+        splash.style.display = 'none';
+      }, 800);
+    }
+    
+    enterBtn.addEventListener('click', hideSplash);
+    
+    document.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter' && !splash.classList.contains('hidden')) {
+        hideSplash();
+      }
+    });
+  </script>
+
+</body>
+</html>
