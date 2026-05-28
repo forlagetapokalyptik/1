@@ -53,6 +53,7 @@ html {
   background-size: cover;
   background-position: top center;
   opacity: 0.5;
+  pointer-events: none;
 }
 
 .bottom-image {
