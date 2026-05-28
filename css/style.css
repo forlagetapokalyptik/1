@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
 
 /* Reset */
 * {
@@ -10,7 +10,7 @@
 
 /* Grundlæggende */
 body {
-  font-family: 'Crimson Text', 'Times New Roman', Georgia, serif;
+font-family: 'Old Standard TT', 'Times New Roman', Georgia, serif;
   line-height: 1.6;
   color: #333;
   background-color: #fff;
