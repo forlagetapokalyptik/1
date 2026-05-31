@@ -85,8 +85,9 @@ nav {
   margin: 0 auto;
   padding: 1rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  gap: 1.5rem;
 }
 
 .nav-left,
@@ -95,7 +96,7 @@ nav {
   display: flex;
   gap: 1.25rem;
   align-items: center;
-  flex: 1;
+  flex: 0 0 auto;
 }
 
 .nav-right {
@@ -303,4 +304,41 @@ footer {
   cursor: pointer;
   display: block;
   width: 100%;
+}
+
+/* Udgivelser */
+.udgivelse {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  align-items: flex-start;
+}
+
+.udgivelse-billede {
+  flex: 0 0 auto;
+}
+
+.udgivelse-billede img {
+  width: 160px;
+  height: 243px;
+  object-fit: cover;
+  display: block;
+}
+
+.udgivelse-info {
+  flex: 1;
+}
+
+.udgivelse-titel {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.udgivelse-forfatter {
+  margin-bottom: 1rem;
+}
+
+.udgivelse-beskrivelse {
+  line-height: 1.7;
 }
