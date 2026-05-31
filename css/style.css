@@ -93,7 +93,7 @@ nav {
 .nav-right {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: 1.25rem;
   align-items: center;
   flex: 1;
 }
@@ -104,7 +104,7 @@ nav {
 
 .nav-center {
   flex: 0 0 auto;
-  padding: 0 0.75rem;
+  padding: 0 0.35rem;
   display: flex;
   justify-content: center;
 }
