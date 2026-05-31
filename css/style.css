@@ -336,6 +336,12 @@ footer {
   margin-bottom: 0.25rem;
 }
 
+.udgivelse-undertitel {
+  font-size: 1rem;
+  font-style: italic;
+  margin-bottom: 0.25rem;
+}
+
 .udgivelse-forfatter {
   margin-bottom: 1rem;
 }
