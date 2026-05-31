@@ -53,9 +53,11 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
-  opacity: var(--bg-opacity, 0);
+  opacity: var(--bg-opacity, 0.3);
   pointer-events: none;
-
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 60%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 60%);
+  
 }
 
 .bottom-image {
