@@ -81,7 +81,7 @@ header {
 }
 
 nav {
-  max-width: 100%;
+  width: 100%;
   margin: 0 auto;
   padding: 1rem;
   display: flex;
@@ -105,6 +105,8 @@ nav {
 .nav-center {
   flex: 0 0 auto;
   padding: 0 0.75rem;
+  display: flex;
+  justify-content: center;
 }
 
 .nav-title-img {
