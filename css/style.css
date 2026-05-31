@@ -39,6 +39,7 @@ html {
   width: 100%;
   height: 100vh;
   z-index: -3;
+
 }
 
 .top-image::before {
@@ -54,6 +55,8 @@ html {
   background-position: top center;
   opacity: 0.5;
   pointer-events: none;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 60%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 60%);
 }
 
 .bottom-image {
