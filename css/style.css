@@ -176,6 +176,10 @@ main {
   max-width: 100%;
 }
 
+.content.centered {
+  text-align: center;
+}
+
 /* Bøger og info */
 .book-grid {
   display: grid;
