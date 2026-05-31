@@ -84,12 +84,12 @@ window.addEventListener('scroll', function() {
   const scrollTop = window.scrollY;
   const maxScroll = document.body.scrollHeight - window.innerHeight;
   const progress = scrollTop / maxScroll;
-  const topImage = document.querySelector('.top-image::before');
-  
-  // Sæt opacity på selve .top-image elementet i stedet
+  const minOpacity = 0.3;  // synlig selv i toppen
+  const maxOpacity = 0.8;  // fuldt synlig i bunden
+  const opacity = minOpacity + (maxOpacity - minOpacity) * progress;
   const bg = document.querySelector('.top-image');
-  bg.style.setProperty('--bg-opacity', progress);
-});
+  bg.style.setProperty('--bg-opacity', opacity);
+    });
     
   </script>
 
