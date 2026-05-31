@@ -328,6 +328,7 @@ footer {
 
 .udgivelse-info {
   flex: 1;
+  text-align: left;
 }
 
 .udgivelse-titel {
