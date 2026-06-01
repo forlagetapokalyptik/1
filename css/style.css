@@ -373,3 +373,25 @@ footer {
 .arkiv-forfatter a:hover {
   text-decoration: underline;
 }
+
+/* Forfatter layout */
+.forfatter-layout {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.forfatter-bibliografi {
+  flex: 1;
+}
+
+.forfatter-biografi {
+  flex: 2;
+}
+
+.forfatter-sektion-titel {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
