@@ -350,3 +350,26 @@ footer {
 .udgivelse-beskrivelse {
   line-height: 1.7;
 }
+
+/* Arkiv */
+.arkiv-beskrivelse {
+  margin-bottom: 2rem;
+}
+
+.arkiv-liste {
+  margin-top: 1rem;
+}
+
+.arkiv-forfatter {
+  margin-bottom: 0.75rem;
+}
+
+.arkiv-forfatter a {
+  color: #000;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.arkiv-forfatter a:hover {
+  text-decoration: underline;
+}
