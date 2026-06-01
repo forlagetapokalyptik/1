@@ -395,3 +395,6 @@ footer {
   margin-bottom: 1rem;
   letter-spacing: 1px;
 }
+main.wide {
+  max-width: 1000px;
+}
