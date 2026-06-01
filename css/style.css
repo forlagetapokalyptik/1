@@ -372,6 +372,16 @@ footer {
 
 .arkiv-forfatter a:hover {
   text-decoration: underline;
+  
+}
+.arkiv-vaerk a {
+  color: #000;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.arkiv-vaerk a:hover {
+  text-decoration: underline;
 }
 
 /* Forfatter layout */
