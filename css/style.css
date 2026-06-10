@@ -351,6 +351,17 @@ footer {
 .udgivelse-beskrivelse {
   line-height: 1.7;
 }
+.udgivelse-link {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  text-decoration: none;
+  color: inherit;
+}
+
+.udgivelse-link:hover .udgivelse-titel {
+  text-decoration: underline;
+}
 
 /* Arkiv */
 .arkiv-beskrivelse {
