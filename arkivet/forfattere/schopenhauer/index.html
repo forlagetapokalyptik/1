@@ -50,5 +50,18 @@
     </footer>
     <div class="bottom-image"></div>
   </div>
+
+      <script>
+    window.addEventListener('scroll', function() {
+      const scrollTop = window.scrollY;
+      const maxScroll = document.body.scrollHeight - window.innerHeight;
+      const progress = scrollTop / maxScroll;
+      const maxOpacity = 0.6;
+      const opacity = maxOpacity - maxOpacity * progress;
+      const bg = document.querySelector('.top-image');
+      bg.style.setProperty('--bg-opacity', opacity);
+    });
+  </script>
+    
 </body>
 </html>
