@@ -52,7 +52,7 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
-  opacity: var(--bg-opacity, 0.3);
+  opacity: var(--bg-opacity, 0.6);
   pointer-events: none;
   -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 60%);
   mask-image: linear-gradient(to bottom, transparent 0%, black 60%);
@@ -351,6 +351,7 @@ footer {
 .udgivelse-beskrivelse {
   line-height: 1.7;
 }
+
 .udgivelse-link {
   display: flex;
   gap: 2rem;
@@ -384,8 +385,12 @@ footer {
 
 .arkiv-forfatter a:hover {
   text-decoration: underline;
-  
 }
+
+.arkiv-vaerk {
+  margin-bottom: 0.75rem;
+}
+
 .arkiv-vaerk a {
   color: #000;
   text-decoration: none;
@@ -417,6 +422,7 @@ footer {
   margin-bottom: 1rem;
   letter-spacing: 1px;
 }
+
 main.wide {
   max-width: 1000px;
 }
