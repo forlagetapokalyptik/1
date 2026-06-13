@@ -426,3 +426,40 @@ footer {
 main.wide {
   max-width: 1000px;
 }
+
+/* Enkelt udgivelse */
+.udgivelse-enkelt {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.udgivelse-billede-stor {
+  flex: 0 0 auto;
+}
+
+.udgivelse-billede-stor img {
+  width: 240px;
+  height: 365px;
+  object-fit: cover;
+  display: block;
+}
+
+.udgivelse-info-enkelt {
+  flex: 1;
+  text-align: left;
+  padding-top: 1rem;
+}
+
+.udgivelse-arkiv-link {
+  margin-top: 1.5rem;
+}
+
+.udgivelse-arkiv-link a {
+  color: #000;
+  text-decoration: none;
+}
+
+.udgivelse-arkiv-link a:hover {
+  text-decoration: underline;
+}
