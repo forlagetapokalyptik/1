@@ -482,6 +482,7 @@ main.wide {
 
 .forfatter-layout-tre {
   display: flex;
+  justify-content: center;
   gap: 3rem;
   align-items: flex-start;
 }
