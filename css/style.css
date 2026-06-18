@@ -479,3 +479,15 @@ main.wide {
   margin-bottom: 0.75rem;
   letter-spacing: 1px;
 }
+
+.forfatter-layout-tre {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.forfatter-layout-tre .forfatter-biografi,
+.forfatter-layout-tre .forfatter-bibliografi,
+.forfatter-layout-tre .forfatter-digitaludgaver {
+  flex: 1;
+}
