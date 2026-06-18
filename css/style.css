@@ -491,3 +491,33 @@ main.wide {
 .forfatter-layout-tre .forfatter-digitaludgaver {
   flex: 1;
 }
+
+/* Mobil navigation */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.75rem;
+  }
+
+  .nav-left,
+  .nav-right {
+    width: auto;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .nav-center {
+    padding: 0.25rem 0;
+    order: -1; /* logo vises først, øverst */
+  }
+
+  .nav-title-img {
+    height: 45px;
+  }
+
+  nav ul li a {
+    font-size: 1rem;
+  }
+}
