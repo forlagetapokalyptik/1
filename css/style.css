@@ -522,3 +522,7 @@ main.wide {
     font-size: 1rem;
   }
 }
+
+.forfatter-biografi p {
+  margin-bottom: 1rem;
+}
