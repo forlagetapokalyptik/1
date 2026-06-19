@@ -521,6 +521,43 @@ main.wide {
   nav ul li a {
     font-size: 1rem;
   }
+ main, main.wide {
+    max-width: 100%;
+    padding: 1rem;
+  }
+
+  .forfatter-layout,
+  .forfatter-layout-tre,
+  .udgivelse,
+  .udgivelse-enkelt {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .forfatter-layout-tre .forfatter-biografi,
+  .forfatter-layout-tre .forfatter-bibliografi,
+  .forfatter-layout-tre .forfatter-digitaludgaver,
+  .forfatter-biografi,
+  .forfatter-bibliografi {
+    flex: none;
+    width: 100%;
+  }
+
+  .udgivelse-billede img,
+  .udgivelse-billede-stor img {
+    width: 100%;
+    height: auto;
+  }
+
+  .nav-left,
+  .nav-right {
+    width: auto;
+  }
+
+  .page-title {
+    white-space: normal;
+    font-size: 1.5rem;
+  }
 }
 
 .forfatter-biografi p {
