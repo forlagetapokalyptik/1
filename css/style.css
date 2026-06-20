@@ -558,6 +558,10 @@ main.wide {
     white-space: normal;
     font-size: 1.5rem;
   }
+  .udgivelse-billede img {
+  width: 120px;
+  height: auto;
+}
 }
 
 .forfatter-biografi p {
