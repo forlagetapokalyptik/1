@@ -486,9 +486,12 @@ main.wide {
   gap: 3rem;
   align-items: flex-start;
 }
-
 .forfatter-layout-tre .forfatter-biografi,
 .forfatter-layout-tre .forfatter-bibliografi,
+.forfatter-layout-tre .forfatter-digitaludgaver {
+  flex: 1;
+}
+
 .forfatter-layout-tre .forfatter-digitaludgaver {
   flex: 1.2;
 }
@@ -572,8 +575,8 @@ main.wide {
   margin-bottom: 0.75rem;
 }
 .pdf-reader {
-  width: 120%;
-  height: 80vh;
+  width: 100%;
+  height: 90vh;
   border: 1px solid #000;
   display: block;
 }
