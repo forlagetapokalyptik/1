@@ -490,7 +490,7 @@ main.wide {
 .forfatter-layout-tre .forfatter-biografi,
 .forfatter-layout-tre .forfatter-bibliografi,
 .forfatter-layout-tre .forfatter-digitaludgaver {
-  flex: 1;
+  flex: 1.2;
 }
 
 /* Mobil navigation */
