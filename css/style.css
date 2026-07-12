@@ -580,5 +580,5 @@ main.wide {
   height: 90vh;
   border: 1px solid #000;
   display: block;
-  margin-top: -2.5rem;  /* rykker op på linje med de andre */
+  margin-top: 2.3rem;  /* matcher højden af .forfatter-sektion-titel */
 }
