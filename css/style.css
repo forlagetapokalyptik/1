@@ -493,7 +493,8 @@ main.wide {
 }
 
 .forfatter-layout-tre .forfatter-digitaludgaver {
-  flex: 1.2;
+  flex: 1.5;
+  margin-left: -1.5rem;  /* rykker lidt til venstre */
 }
 
 /* Mobil navigation */
@@ -579,4 +580,5 @@ main.wide {
   height: 90vh;
   border: 1px solid #000;
   display: block;
+  margin-top: -2.5rem;  /* rykker op på linje med de andre */
 }
