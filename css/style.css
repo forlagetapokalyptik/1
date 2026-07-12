@@ -572,7 +572,7 @@ main.wide {
   margin-bottom: 0.75rem;
 }
 .pdf-reader {
-  width: 100%;
+  width: 120%;
   height: 80vh;
   border: 1px solid #000;
   display: block;
