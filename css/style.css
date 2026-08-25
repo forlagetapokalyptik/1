@@ -440,6 +440,10 @@ footer {
   flex: 1;
 }
 
+.med-pdf .forfatter-digitaludgaver {
+  flex: 2;
+}
+
 /* =====================
    KONTAKT
    ===================== */
