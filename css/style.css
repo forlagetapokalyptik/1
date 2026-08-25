@@ -485,6 +485,8 @@ main.wide {
   justify-content: center;
   gap: 3rem;
   align-items: flex-start;
+  max-width: 900px;
+  margin: 0 auto;
 }
 .forfatter-layout-tre .forfatter-biografi,
 .forfatter-layout-tre .forfatter-bibliografi,
