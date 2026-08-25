@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
 
-/* Reset */
+/* =====================
+   RESET
+   ===================== */
 * {
   margin: 0;
   padding: 0;
@@ -8,7 +10,13 @@
   scroll-behavior: auto;
 }
 
-/* Grundlæggende */
+/* =====================
+   GRUNDLÆGGENDE
+   ===================== */
+html {
+  overscroll-behavior-y: none;
+}
+
 body {
   font-family: 'Old Standard TT', 'Times New Roman', Georgia, serif;
   line-height: 1.6;
@@ -18,11 +26,9 @@ body {
   overscroll-behavior-y: none;
 }
 
-html {
-  overscroll-behavior-y: none;
-}
-
-/* Wrapper til flex layout */
+/* =====================
+   LAYOUT
+   ===================== */
 .page-wrapper {
   display: flex;
   flex-direction: column;
@@ -31,7 +37,41 @@ html {
   width: 100%;
 }
 
-/* Baggrundsbilleder */
+main {
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 1rem;
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+main.wide {
+  max-width: 1000px;
+}
+
+.page-title {
+  font-size: 2rem;
+  font-weight: normal;
+  color: #000;
+  margin-bottom: 2rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.content {
+  width: 100%;
+  max-width: 100%;
+}
+
+.content.centered {
+  text-align: center;
+}
+
+/* =====================
+   BAGGRUNDSBILLEDER
+   ===================== */
 .top-image {
   position: fixed;
   top: 0;
@@ -70,7 +110,9 @@ html {
   position: relative;
 }
 
-/* Header & navigation */
+/* =====================
+   HEADER & NAVIGATION
+   ===================== */
 header {
   background: rgba(255, 255, 255, 0.6);
   border-bottom: 1px solid #000;
@@ -133,95 +175,9 @@ nav ul li a.active {
   font-weight: 600;
 }
 
-/* Main */
-main {
-  max-width: 650px;
-  margin: 0 auto;
-  padding: 1rem;
-  position: relative;
-  z-index: 5;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.page-title {
-  font-size: 2rem;
-  font-weight: normal;
-  color: #000;
-  margin-bottom: 2rem;
-  text-align: center;
-  white-space: nowrap;
-}
-
-.content {
-  width: 100%;
-  max-width: 100%;
-}
-
-.content.centered {
-  text-align: center;
-}
-
-/* Bøger og info */
-.book-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 2rem;
-}
-
-.book-item {
-  background: #fff;
-  border: 1px solid #000;
-}
-
-.book-item img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  display: block;
-}
-
-.book-info {
-  padding: 1rem;
-}
-
-.book-title {
-  font-weight: bold;
-}
-
-/* Kontakt styling */
-.contact-info {
-  text-align: inherit;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-}
-
-.contact-item {
-  margin-bottom: 1.5rem;
-  padding: 0;
-}
-
-.contact-item h4 {
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  font-size: 1.1rem;
-}
-
-.contact-item p {
-  margin-bottom: 0.5rem;
-}
-
-.contact-item a {
-  color: #000;
-  text-decoration: underline;
-}
-
-.contact-item a:hover {
-  text-decoration: none;
-}
-
-/* Footer */
+/* =====================
+   FOOTER
+   ===================== */
 footer {
   position: absolute;
   bottom: 20px;
@@ -233,7 +189,9 @@ footer {
   pointer-events: none;
 }
 
-/* Splash Screen */
+/* =====================
+   SPLASH SCREEN
+   ===================== */
 #splash-screen {
   position: fixed;
   top: 0;
@@ -308,7 +266,9 @@ footer {
   width: 100%;
 }
 
-/* Udgivelser */
+/* =====================
+   UDGIVELSER
+   ===================== */
 .udgivelse {
   display: flex;
   gap: 2rem;
@@ -364,69 +324,6 @@ footer {
   text-decoration: underline;
 }
 
-/* Arkiv */
-.arkiv-beskrivelse {
-  margin-bottom: 2rem;
-}
-
-.arkiv-liste {
-  margin-top: 1rem;
-}
-
-.arkiv-forfatter {
-  margin-bottom: 0.75rem;
-}
-
-.arkiv-forfatter a {
-  color: #000;
-  text-decoration: none;
-  font-size: 1.1rem;
-}
-
-.arkiv-forfatter a:hover {
-  text-decoration: underline;
-}
-
-.arkiv-vaerk {
-  margin-bottom: 0.75rem;
-}
-
-.arkiv-vaerk a {
-  color: #000;
-  text-decoration: none;
-  font-size: 1.1rem;
-}
-
-.arkiv-vaerk a:hover {
-  text-decoration: underline;
-}
-
-/* Forfatter layout */
-.forfatter-layout {
-  display: flex;
-  gap: 3rem;
-  align-items: flex-start;
-}
-
-.forfatter-bibliografi {
-  flex: 1;
-}
-
-.forfatter-biografi {
-  flex: 2;
-}
-
-.forfatter-sektion-titel {
-  font-size: 1rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  letter-spacing: 1px;
-}
-
-main.wide {
-  max-width: 1000px;
-}
-
 /* Enkelt udgivelse */
 .udgivelse-enkelt {
   display: flex;
@@ -464,7 +361,127 @@ main.wide {
   text-decoration: underline;
 }
 
-/* Redaktion */
+/* =====================
+   ARKIV
+   ===================== */
+.arkiv-beskrivelse {
+  margin-bottom: 2rem;
+}
+
+.arkiv-liste {
+  margin-top: 1rem;
+}
+
+.arkiv-forfatter {
+  margin-bottom: 0.75rem;
+}
+
+.arkiv-forfatter a,
+.arkiv-vaerk a {
+  color: #000;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.arkiv-forfatter a:hover,
+.arkiv-vaerk a:hover {
+  text-decoration: underline;
+}
+
+.arkiv-vaerk {
+  margin-bottom: 0.75rem;
+}
+
+/* =====================
+   FORFATTER LAYOUT
+   ===================== */
+.forfatter-layout {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.forfatter-biografi {
+  flex: 2;
+}
+
+.forfatter-bibliografi {
+  flex: 1;
+}
+
+.forfatter-sektion-titel {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+.forfatter-biografi p {
+  margin-bottom: 1rem;
+}
+
+.forfatter-bibliografi p {
+  margin-bottom: 0.75rem;
+}
+
+/* Tre kolonner */
+.forfatter-layout-tre {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  align-items: flex-start;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.forfatter-layout-tre .forfatter-biografi,
+.forfatter-layout-tre .forfatter-bibliografi,
+.forfatter-layout-tre .forfatter-digitaludgaver {
+  flex: 1;
+}
+
+.forfatter-layout-tre .forfatter-digitaludgaver {
+  flex: 1.5;
+  margin-left: -1.5rem;
+}
+
+/* =====================
+   KONTAKT
+   ===================== */
+.contact-info {
+  text-align: inherit;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-item {
+  margin-bottom: 1.5rem;
+  padding: 0;
+}
+
+.contact-item h4 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.contact-item p {
+  margin-bottom: 0.5rem;
+}
+
+.contact-item a {
+  color: #000;
+  text-decoration: underline;
+}
+
+.contact-item a:hover {
+  text-decoration: none;
+}
+
+/* =====================
+   FORLAGET / REDAKTION
+   ===================== */
 .redaktion {
   margin-top: 2rem;
   display: flex;
@@ -480,26 +497,49 @@ main.wide {
   letter-spacing: 1px;
 }
 
-.forfatter-layout-tre {
-  display: flex;
-  justify-content: center;
-  gap: 3rem;
-  align-items: flex-start;
-  max-width: 900px;
-  margin: 0 auto;
-}
-.forfatter-layout-tre .forfatter-biografi,
-.forfatter-layout-tre .forfatter-bibliografi,
-.forfatter-layout-tre .forfatter-digitaludgaver {
-  flex: 1;
+/* =====================
+   PDF READER
+   ===================== */
+.pdf-reader {
+  width: 100%;
+  height: 90vh;
+  border: 1px solid #000;
+  display: block;
+  margin-top: 2.3rem;
 }
 
-.forfatter-layout-tre .forfatter-digitaludgaver {
-  flex: 1.5;
-  margin-left: -1.5rem;  /* rykker lidt til venstre */
+/* =====================
+   BØGER (ubrugt men beholdt)
+   ===================== */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2rem;
 }
 
-/* Mobil navigation */
+.book-item {
+  background: #fff;
+  border: 1px solid #000;
+}
+
+.book-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+.book-info {
+  padding: 1rem;
+}
+
+.book-title {
+  font-weight: bold;
+}
+
+/* =====================
+   MOBIL
+   ===================== */
 @media (max-width: 768px) {
   nav {
     flex-direction: column;
@@ -517,7 +557,7 @@ main.wide {
 
   .nav-center {
     padding: 0.25rem 0;
-    order: -1; /* logo vises først, øverst */
+    order: -1;
   }
 
   .nav-title-img {
@@ -527,9 +567,16 @@ main.wide {
   nav ul li a {
     font-size: 1rem;
   }
- main, main.wide {
+
+  main,
+  main.wide {
     max-width: 100%;
     padding: 1rem;
+  }
+
+  .page-title {
+    white-space: normal;
+    font-size: 1.5rem;
   }
 
   .forfatter-layout,
@@ -549,38 +596,13 @@ main.wide {
     width: 100%;
   }
 
-  .udgivelse-billede img,
+  .udgivelse-billede img {
+    width: 120px;
+    height: auto;
+  }
+
   .udgivelse-billede-stor img {
     width: 100%;
     height: auto;
   }
-
-  .nav-left,
-  .nav-right {
-    width: auto;
-  }
-
-  .page-title {
-    white-space: normal;
-    font-size: 1.5rem;
-  }
-  .udgivelse-billede img {
-  width: 120px;
-  height: auto;
-}
-}
-
-.forfatter-biografi p {
-  margin-bottom: 1rem;
-}
-
-.forfatter-bibliografi p {
-  margin-bottom: 0.75rem;
-}
-.pdf-reader {
-  width: 100%;
-  height: 90vh;
-  border: 1px solid #000;
-  display: block;
-  margin-top: 2.3rem;  /* matcher højden af .forfatter-sektion-titel */
 }
